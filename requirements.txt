@@ -1,0 +1,49 @@
+# FastAPI and Web Server
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+python-multipart==0.0.6
+
+# ML Training - Unsloth and dependencies
+# Note: Unsloth requires manual installation or git install
+# Install with: pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+transformers>=4.37.0
+torch>=2.1.0
+accelerate>=0.26.0
+bitsandbytes>=0.42.0
+xformers>=0.0.23
+
+# Dataset handling
+datasets>=2.16.0
+trl>=0.7.0
+peft>=0.7.0
+
+# HTTP requests and API clients
+requests>=2.31.0
+httpx>=0.26.0
+anthropic>=0.18.0  # For ClaudeProvider
+openai>=1.0.0      # For OpenAIProvider
+
+# Environment and configuration
+python-dotenv>=1.0.0
+
+# Data processing
+pandas>=2.1.0
+numpy>=1.26.0
+python-dateutil>=2.8.2
+
+# Utilities
+pyyaml>=6.0.0
+tqdm>=4.66.0
+
+# CLI and TUI
+click>=8.1.0
+textual>=0.48.0
+rich>=13.7.0
+
+# Logging
+loguru>=0.7.0
+
+# CORS middleware
+aiofiles>=23.0.0
