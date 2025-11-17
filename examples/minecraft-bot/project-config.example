@@ -1,0 +1,57 @@
+{
+  "name": "minecraft-bot",
+  "objective": "Train a Minecraft assistant that responds using structured XML with thinking (reasoning about scenarios and which commands to use), command (Minecraft console commands only), and speak (player-facing responses)",
+  "xml_patterns": [
+    {
+      "tag_name": "thinking",
+      "description": "Internal reasoning about the scenario, available tools, and which Minecraft commands to use",
+      "constraints": "Must emphasize scenario analysis and command selection. Should consider game context, player needs, and available Minecraft commands.",
+      "required": true,
+      "attributes": []
+    },
+    {
+      "tag_name": "command",
+      "description": "Minecraft console commands to execute",
+      "constraints": "MUST be valid Minecraft commands only. Examples: /give, /tp, /time, /weather, /gamemode, /summon, /setblock, /fill, /kill, /effect, /enchant, /xp, etc. Multiple commands separated by newlines.",
+      "required": true,
+      "attributes": []
+    },
+    {
+      "tag_name": "speak",
+      "description": "Text spoken to the player in chat",
+      "constraints": "Should be friendly, helpful, and contextual. Explain what action is being taken.",
+      "required": true,
+      "attributes": []
+    }
+  ],
+  "dataset_format": "sharegpt",
+  "base_model": "qwen2.5:14b-instruct",
+  "ai_config": {
+    "provider": "ollama",
+    "model": "qwen2.5:14b-instruct",
+    "base_url": "http://localhost:11434",
+    "temperature": 0.8
+  },
+  "training_config": {
+    "max_seq_length": 2048,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 0.0002,
+    "num_train_epochs": 3,
+    "warmup_steps": 100,
+    "logging_steps": 10,
+    "save_steps": 500,
+    "optim": "adamw_8bit",
+    "weight_decay": 0.01,
+    "fp16": false,
+    "bf16": true,
+    "max_grad_norm": 1.0,
+    "seed": 42
+  },
+  "datasets": [],
+  "created_at": "2025-11-17T16:00:00Z",
+  "updated_at": "2025-11-17T16:00:00Z"
+}
