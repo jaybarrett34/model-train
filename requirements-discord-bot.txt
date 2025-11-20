@@ -1,0 +1,14 @@
+# Discord AOTR Webhook Bot Requirements
+# Install with: pip install -r requirements-discord-bot.txt
+
+# Discord API
+discord.py>=2.3.0
+
+# Web server for webhook
+Flask>=3.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Optional: For better async handling
+aiohttp>=3.9.0
